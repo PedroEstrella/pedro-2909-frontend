@@ -1,4 +1,5 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react'; // <-- Importación estricta de tipo
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 interface UserSession {
