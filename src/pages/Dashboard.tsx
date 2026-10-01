@@ -93,7 +93,10 @@ const [cardData, setCardData] = useState({
   setPaymentMessage(null);
 
   try {
-    const response = await fetch('http://localhost:3000/api/snailpay/charge', {
+    // Uso local
+    // const response = await fetch('http://localhost:3000/api/snailpay/charge', {
+    // Uso de Render  
+    const response = await fetch('https://pedro-2909-backend.onrender.com', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',

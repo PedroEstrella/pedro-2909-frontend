@@ -1,4 +1,9 @@
-const API_URL = 'http://localhost:3000/api/auth'; // Asegúrate de que tu backend corra en este puerto
+
+
+// backend corre en este puerto de forma local
+// const API_URL = 'http://localhost:3000/api/auth'; 
+// uso render para el backend en la nube
+const API_URL = 'https://pedro-2909-backend.onrender.com'; 
 
 export const apiAuth = {
   async register(data: any) {
