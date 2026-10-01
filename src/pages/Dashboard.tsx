@@ -26,8 +26,7 @@ const [cardData, setCardData] = useState({
   const { user, logout, login } = useAuth();
   const navigate = useNavigate();
   
-  // Estados para la recarga simulada con SnailPay
-  const [amountToCharge, setAmountToCharge] = useState<string>('');
+  // Estados para la recarga simulada con SnailPay  
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [paymentMessage, setPaymentMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
