@@ -11,10 +11,10 @@ ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tool
 
 export const Dashboard = () => {
 
-  // 1. Añade este nuevo estado arriba del componente para controlar el switch de error del sistema
+  // 1. controla el switch de error del sistema
 const [simulateSystemDown, setSimulateSystemDown] = useState<boolean>(false);
 
-  // 1. Agregar este nuevo estado al inicio del componente Dashboard junto a los otros:
+  
 const [cardData, setCardData] = useState({
   cardNumber: '',
   expiryDate: '',
@@ -32,7 +32,7 @@ const [cardData, setCardData] = useState({
 
   // --- DATOS SIMULADOS CONGRUENTES (6 carreras en el día) ---
   // Los caracoles se reparten exactamente las 6 victorias del día.
-  const snailNames = ['Turbo Veloz', 'Rayo Baboso', 'Caparazón Feroz', 'Flash Lento', 'Bala de Jardín', 'Saltador Lento'];
+  const snailNames = ['Turbo', 'Rayo', 'Caparazón Feroz', 'Flash Lento', 'Bala de Jardín', 'Salta Lento'];
   const snailVictories = [2, 1, 2, 0, 1, 0]; // Suma exacta: 6 victorias en 6 carreras.
 
   // --- CONFIGURACIÓN GRÁFICA DE BARRAS (Victorias) ---
@@ -53,7 +53,7 @@ const [cardData, setCardData] = useState({
     responsive: true,
     plugins: {
       legend: { display: false },
-      title: { display: true, text: 'Historial de Victorias Diarias (6 Carreras Totales)' },
+      title: { display: true, text: 'Historial de Victorias (6 Carreras Totales)' },
     },
     scales: {
       y: {
@@ -114,7 +114,7 @@ const [cardData, setCardData] = useState({
 
     const result = await response.json();
 
-    // Guardar el log transaccional completo en LocalStorage (Requisito 2.4 de persistencia)
+    // Guardar el log transaccional completo en LocalStorage (Requisito 2.4)
     const transactionLogs = JSON.parse(localStorage.getItem('snail_payment_logs') || '[]');
     transactionLogs.push({
       id: result.id,
@@ -171,8 +171,6 @@ const [cardData, setCardData] = useState({
 };
 
 
-
-
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -183,7 +181,7 @@ const [cardData, setCardData] = useState({
       {/* Encabezado */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '15px' }}>
         <div>
-          <h1 style={{ margin: 0 }}>🐌 SnailBetting Dashboard</h1>
+          <h1 style={{ margin: 0 }}>🐌 Apuestas Caracoles Dashboard</h1>
           <p style={{ margin: '5px 0 0 0', color: '#666' }}>Apostador: <strong>{user?.fullName}</strong></p>
         </div>
         <div style={{ textAlign: 'right' }}>
