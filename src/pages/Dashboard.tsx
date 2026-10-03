@@ -32,7 +32,7 @@ const [cardData, setCardData] = useState({
 
   // --- DATOS SIMULADOS CONGRUENTES (6 carreras en el día) ---
   // Los caracoles se reparten exactamente las 6 victorias del día.
-  const snailNames = ['Turbo', 'Rayo', 'Caparazón Feroz', 'Flash Lento', 'Bala de Jardín', 'Salta Lento'];
+  const snailNames = ['Turbo', 'Rayo', 'Feroz', 'Flash Lento', 'Bala de Jardín', 'Salta Lento'];
   const snailVictories = [2, 1, 2, 0, 1, 0]; // Suma exacta: 6 victorias en 6 carreras.
 
   // --- CONFIGURACIÓN GRÁFICA DE BARRAS (Victorias) ---
@@ -80,7 +80,7 @@ const [cardData, setCardData] = useState({
     responsive: true,
     plugins: {
       legend: { position: 'bottom' as const },
-      title: { display: true, text: 'Proporción de Apuestas Ganadas vs Perdidas' },
+      title: { display: true, text: 'Apuestas Ganadas vs Perdidas' },
     },
   };
 
@@ -210,7 +210,7 @@ const [cardData, setCardData] = useState({
 
         {/* Panel de SnailPay */}
        <section style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#fff', height: 'fit-content' }}>
-  <h3 style={{ marginTop: 0, borderBottom: '1px solid #eee', paddingBottom: '10px' }}>Pasarela de Pagos (SnailPay Simulador)</h3>
+  <h3 style={{ marginTop: 0, borderBottom: '1px solid #eee', paddingBottom: '10px' }}>Pagos (SnailPay Simulador)</h3>
   
   <form onSubmit={handleSnailPayCharge} style={{ marginTop: '15px' }}>
     <div style={{ marginBottom: '12px' }}>
@@ -223,7 +223,7 @@ const [cardData, setCardData] = useState({
     </div>
 
     <div style={{ marginBottom: '12px' }}>
-      <label style={{ display: 'block', marginBottom: '4px', fontSize: '14px', fontWeight: 'bold' }}>Número de Tarjeta de Pruebas:</label>
+      <label style={{ display: 'block', marginBottom: '4px', fontSize: '14px', fontWeight: 'bold' }}>Número de Tarjeta:</label>
       <input 
         type="text" required placeholder="1234123412341234" maxLength={16} disabled={isLoading}
         value={cardData.cardNumber} onChange={e => setCardData({...cardData, cardNumber: e.target.value})}
