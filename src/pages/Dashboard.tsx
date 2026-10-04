@@ -95,7 +95,7 @@ const [cardData, setCardData] = useState({
     // Uso local
     // const response = await fetch('http://localhost:3000/api/snailpay/charge', {
     // Uso de Render  
-    const response = await fetch('https://pedro-2909-backend.onrender.com', {
+    const response = await fetch('https://pedro-2909-backend.onrender.com/api/snailpay/charge', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -177,7 +177,7 @@ const [cardData, setCardData] = useState({
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '900px', margin: '0 auto' }}>
+    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '1000px', margin: '0 auto' }}>
       {/* Encabezado */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '15px' }}>
         <div>
