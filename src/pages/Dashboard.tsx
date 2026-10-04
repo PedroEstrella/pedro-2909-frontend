@@ -137,7 +137,7 @@ const [cardData, setCardData] = useState({
     }
 
     // --- MANEJO DE OPERACIÓN APROBADA ---
-    // Convertimos el monto de dólares de la transacción a centavos para sumar al balance interno
+    // Convierte el monto de dólares de la transacción a centavos para sumar al balance interno
     const amountInCentavos = result.transaction_amount * 100;
     const nuevoSaldo = user.balance + amountInCentavos;
 
@@ -177,7 +177,7 @@ const [cardData, setCardData] = useState({
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '1000px', margin: '0 auto' }}>
+    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '900px', margin: '0 auto' }}>
       {/* Encabezado */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #eee', paddingBottom: '15px' }}>
         <div>
@@ -185,7 +185,7 @@ const [cardData, setCardData] = useState({
           <p style={{ margin: '5px 0 0 0', color: '#666' }}>Apostador: <strong>{user?.fullName}</strong></p>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <h3 style={{ margin: 0, color: '#28a745' }}>Saldo Cuenta: \${(user?.balance ?? 0) / 100} USD</h3>
+          <h3 style={{ margin: 0, color: '#28a745' }}>Saldo Cuenta: ${(user?.balance ?? 0) / 100} USD</h3>
           <button onClick={handleLogout} style={{ marginTop: '5px', padding: '5px 10px', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
             Cerrar Sesión
           </button>
